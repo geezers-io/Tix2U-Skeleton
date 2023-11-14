@@ -2,6 +2,7 @@ import { FC, useState } from 'react';
 import { ChakraProvider, Box, Skeleton, Button, Grid, Heading, Link, Switch } from '@chakra-ui/react';
 import { Link as RouterLink } from 'react-router-dom';
 import InfiniteScroll from '../components/InfiniteScroll';
+import logo from '../images/logo.png';
 
 const SkeletonPage: FC = () => {
   const [items, setItems] = useState([...Array(8)]);
@@ -11,10 +12,9 @@ const SkeletonPage: FC = () => {
     setShowDummyData(!showDummyData);
   };
 
-
   const loadMore = () => {
     setTimeout(() => {
-      setItems(prevItems => [...prevItems, ...Array(8)]);
+      setItems((prevItems) => [...prevItems, ...Array(8)]);
     }, 1000);
   };
 
@@ -26,16 +26,15 @@ const SkeletonPage: FC = () => {
             Tix2U
           </Heading>
         </Box>
-        <Switch colorScheme="teal" isChecked={showDummyData} onChange={handleToggleDummyData} mt={4}>
-      </Switch>
+        <Switch colorScheme="teal" isChecked={showDummyData} onChange={handleToggleDummyData} mt={4}></Switch>
         <InfiniteScroll load={loadMore} hasMore={true}>
           <Grid templateColumns={{ sm: 'repeat(1, 1fr)', md: 'repeat(2, 1fr)', lg: 'repeat(4, 1fr)' }} gap={8} mt={8}>
             {items.map((_, index) => (
               <Box key={index} bg="white" borderRadius="md" boxShadow="md" overflow="hidden">
-                {showDummyData && <Skeleton height="200px" />}
+                {showDummyData && <img src={logo} alt="Logo" style={{ width: '100%', height: '200px', objectFit: 'cover' }} />}
                 <Box p={4}>
                   <Heading as="h3" size="md" mb={2}>
-                  {showDummyData ? <Skeleton height="20px" mb="10px" /> : ''}
+                    {showDummyData ? <Skeleton height="20px" mb="10px" /> : ''}
                   </Heading>
                   <Link as={RouterLink} to="/Detail">
                     <Button colorScheme="blue" mt={2}>
