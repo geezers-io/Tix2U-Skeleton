@@ -20,7 +20,7 @@ Skeleton이란 데이터를 가져오기 전에 화면에 보여주는 뼈대같
 
 ```
 $ npm install
-$ npm start
+$ npm run dev
 ```
 ## 프로젝트 팀원
 
