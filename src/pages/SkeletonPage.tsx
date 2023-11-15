@@ -1,8 +1,10 @@
 import { FC, useState } from 'react';
-import { ChakraProvider, Box, Skeleton, Button, Grid, Heading, Link, Switch } from '@chakra-ui/react';
+import { ChakraProvider, Box, Skeleton, Button, Grid, Heading, Link, Switch, Flex } from '@chakra-ui/react';
 import { Link as RouterLink } from 'react-router-dom';
 import InfiniteScroll from '../components/InfiniteScroll';
 import logo from '../images/logo.png';
+import name_logo from '../images/name_logo.png';
+
 
 const SkeletonPage: FC = () => {
   const [items, setItems] = useState([...Array(8)]);
@@ -21,11 +23,11 @@ const SkeletonPage: FC = () => {
   return (
     <ChakraProvider>
       <Box bg="gray.100" minHeight="100vh" p={4} overflowY="auto">
-        <Box as="header" width="100%" bg="white" position="sticky" top="0" zIndex="sticky" boxShadow="md" p={4}>
-          <Heading as="h1" size="xl">
-            Tix2U
+        <Flex  width="100%" bg="white" position="sticky" top="0" zIndex="sticky" boxShadow="md" p={4} justifyContent='center'>
+          <Heading as="h1" size="xl" >
+            <img src={name_logo} width="200px"/>
           </Heading>
-        </Box>
+        </Flex>
         <Switch colorScheme="teal" isChecked={showDummyData} onChange={handleToggleDummyData} mt={4}></Switch>
         <InfiniteScroll load={loadMore} hasMore={true}>
           <Grid templateColumns={{ sm: 'repeat(1, 1fr)', md: 'repeat(2, 1fr)', lg: 'repeat(4, 1fr)' }} gap={8} mt={8}>
