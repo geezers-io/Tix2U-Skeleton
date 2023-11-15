@@ -22,7 +22,7 @@ const SkeletonPage: FC = () => {
 
   return (
     <ChakraProvider>
-      <Box bg="gray.100" minHeight="100vh" p={4} overflowY="auto">
+      <Box bg="purple.50" minHeight="100vh" p={4} overflowY="auto">
         <Flex  width="100%" bg="white" position="sticky" top="0" zIndex="sticky" boxShadow="md" p={4} justifyContent='center'>
           <Heading as="h1" size="xl" >
             <img src={name_logo} width="200px"/>
@@ -39,7 +39,7 @@ const SkeletonPage: FC = () => {
                     {showDummyData ? <Skeleton height="20px" mb="10px" /> : ''}
                   </Heading>
                   <Link as={RouterLink} to="/Detail">
-                    <Button colorScheme="blue" mt={2}>
+                    <Button colorScheme="purple" mt={2}>
                       Click Me!
                     </Button>
                   </Link>
