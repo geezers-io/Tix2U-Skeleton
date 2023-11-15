@@ -1,12 +1,12 @@
 import { FC } from 'react';
-import { ChakraProvider, Box, Heading, Link, Image, Flex } from '@chakra-ui/react';
+import { ChakraProvider, Box, Heading, Link, Image, Flex, Button } from '@chakra-ui/react';
 import { Link as RouterLink } from 'react-router-dom';
 import logo from '../images/logo.png';
 
 const DetailPage: FC = () => {
   return (
     <ChakraProvider>
-      <Box bg="gray.100" minHeight="100vh" p={4}>
+      <Box bg="purple.50" minHeight="100vh" p={4}>
         <Box as="header" width="100%" bg="white" position="sticky" top="0" zIndex="sticky" boxShadow="md" p={4}>
           <Flex justify="space-between" align="center">
             <Heading as="h1" size="xl">
@@ -26,7 +26,7 @@ const DetailPage: FC = () => {
               <br></br>
             </Heading>
             <Link as={RouterLink} to="/">
-              Go Back
+              <Button colorScheme='purple'> Go Back</Button>
             </Link>
           </Box>
         </Box>
